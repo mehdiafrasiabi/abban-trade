@@ -34,5 +34,12 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'ghasedak' => [
+        'key' => env('GHASEDAK_SMS_API_KEY'),
+    ],
+    'zibal' => [
+        'token' => env('ZIBAL_TOKEN'),
+    ]
+
 
 ];

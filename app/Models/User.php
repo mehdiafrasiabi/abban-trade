@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Livewire\Client\Auth\Kyc;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,7 +20,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'mobile',
         'password',
     ];
 
@@ -44,5 +45,24 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function kyc()
+    {
+        return $this->hasOne(kyc_documents::class);
+    }
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function ticketMessages()
+    {
+        return $this->hasMany(TicketMessage::class);
+    }
+
+    public function ticketRatings()
+    {
+        return $this->hasMany(TicketRating::class);
     }
 }

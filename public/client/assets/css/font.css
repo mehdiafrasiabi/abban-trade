@@ -1,0 +1,17 @@
+@font-face {
+    font-family: farsi;
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/farsi/woff/iranbold.woff") format("woff"),
+      url("../fonts/farsi/woff2/iranbold.woff2") format("woff2");
+  }
+  
+
+
+  @font-face {
+    font-family: farsi;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/farsi/woff/iran.woff") format("woff"),
+      url("../fonts/farsi/woff2/iran.woff2") format("woff2");
+  }
