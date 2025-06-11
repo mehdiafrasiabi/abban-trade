@@ -191,11 +191,6 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="pills-market-table-all" role="tabpanel" aria-labelledby="pills-market-table-all-tab">
                                 <div class="table-container">
-                                    @if (session()->has('message'))
-                                        <div class="alert alert-success mt-2">
-                                            {{ session('message') }}
-                                        </div>
-                                    @endif
                                     <input class="form-control"
                                         type="text" wire:model.live.debounce.500ms="search"
                                            placeholder="جستجو بر اساس نام فارسی، انگلیسی یا نماد...">
@@ -213,38 +208,40 @@
                                         <tbody>
                                        @foreach($cryptos as $crypto)
                                            @php
-                                               $priceChange = $crypto['price_change_percentage_24h'];
-                                               $changeColor = match(true) {
-                                                   $priceChange > 0 => 'text-green',
-                                                   $priceChange < 0 => 'text-red',
-                                                   default => 'text-gray',
-                                               };
+                                               $usdToToman = 61000;
+                                                  $priceChange = $crypto['price_change_percentage_24h'];
+                                                  $changeColor = match(true) {
+                                                      $priceChange > 0 => 'text-green',
+                                                      $priceChange < 0 => 'text-red',
+                                                      default => 'text-gray',
+                                                  };
 
-                                               $changeSign = $priceChange > 0 ? '+' : '';
+                                                  $changeSign = $priceChange > 0 ? '+' : '';
                                            @endphp
-                                           <tr>
+
+                                           <tr >
                                                <td class="table__assets">
                                                    <div class="table__assets-crypto">
                                                        <img src="{{@$crypto['image']}}" alt="" class="table__assets-crypto-icon">
-                                                       <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">{{ $crypto['name'] }}</p>
+                                                       <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">{{ $crypto['symbol'] }}</p>
                                                    </div>
                                                </td>
                                                <td>
-                                                   <p class="fb-regular table__assets-name">{{ $crypto['name'] }}</p>
+                                                   <p class="fb-regular table__assets-name" >{{ $crypto['name_fa'] }}</p>
                                                </td>
                                                <td>
-                                                   <p class="fb-regular">{{ number_format(@$crypto['current_price']) }} $</p>
+                                                   <p class="fb-regular">{{ number_format(@$crypto['current_price']*$usdToToman)}} تومان </p>
                                                </td>
                                                <td>
-                                                   <p class="fb-regular ">
+                                                   <p class="fb-regular {{$changeColor}}">
                                                        {{ $changeSign }}{{ number_format($priceChange, 2) }}%
                                                    </p>
                                                </td>
                                                <td>
-                                                   <p class="fb-regular table__market text-bullish">{{ number_format(@$crypto['total_volume']) }}</p>
+                                                   <p class="fb-regular table__market ">{{ number_format(@$crypto['total_volume']) }}</p>
                                                </td>
                                                <td>
-                                                   <a href="{{ route('client.profile.trade', $crypto['id']) }}" class="btn btn-primary btn-sm btn-pill table__btn">خرید</a>
+                                                   <a href="{{ route('client.profile.trade', $crypto['id']) }}" class="btn btn-primary btn-sm btn-pill table__btn">خرید </a>
                                                </td>
                                            </tr>
                                        @endforeach
@@ -259,5 +256,4 @@
             </div>
         </div>
     </div>
-
 </div>

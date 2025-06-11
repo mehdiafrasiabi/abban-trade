@@ -13,7 +13,6 @@
 {{$slot}}
 
 @include('layouts.client.profile-script')
-
 </body>
 
 </html>

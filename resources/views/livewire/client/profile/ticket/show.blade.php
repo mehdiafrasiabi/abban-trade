@@ -10,7 +10,6 @@
                         <div class="table-container">
                             <div class="space-y-4">
                                 <h1 class="text-xl font-bold">تیکت #{{ $ticket->id }} - {{ $ticket->title }}</h1>
-
                                 <div class="bg-gray-100 p-4 rounded">
                                     <p><strong>دپارتمان:</strong> {{ $ticket->department->name }}</p>
                                     <p><strong>وضعیت:</strong>
@@ -59,6 +58,7 @@
                                                 </div>
                                             @endif
                                         </div>
+                                        <br>
                                     @endforeach
                                 </div>
 
@@ -70,9 +70,11 @@
                                         <br>
                                         <input type="file" wire:model="attachment" class="block">
                                         @error('attachment') <span class="text-danger text-sm">{{ $message }}</span> @enderror
-                                        <br>
                                         <button type="submit" class="btn btn-success text-white px-4 py-2 rounded mt-4 mr-auto">ارسال پاسخ</button>
+                                        <a href="{{route('client.profile.ticket')}}" class="btn btn-danger text-white px-4 py-2 rounded mt-4 mr-auto">بازگشت</a>
+                                        <br>
                                     </form>
+
                                 @else
                                     <div class="text-red-600 font-semibold mt-4 bg-danger">
                                         تیکت در وضعیت {{ ($ticket->status=='waiting' ? 'در انتظار پاسخ ادمین' : 'بسته شده' ) }} است و امکان پاسخ‌دهی وجود ندارد.

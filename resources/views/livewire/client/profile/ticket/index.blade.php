@@ -10,7 +10,7 @@
                     <div class="container container--dashboard-nav">
                         <div class="navbar-left">
                             <a class="navbar-brand" href="profile-v2.html#">
-                                <p class="navbar-brand__text"> نمایه و تنظیمات</p>
+                                <p class="navbar-brand__text">تیکت و پشتیبانی</p>
                                 <img src="/client/assets/media/images/icons/logo.png" alt="" class="navbar-brand__icon">
                             </a>
                         </div>

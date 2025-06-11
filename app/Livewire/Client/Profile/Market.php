@@ -3,11 +3,13 @@
 namespace App\Livewire\Client\Profile;
 
 use App\Models\Crypto;
+use Artesaos\SEOTools\Traits\SEOTools;
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
 class Market extends Component
 {
+    use SEOTools;
     public $search = '';
     public $cryptos = [];
     public $topGainer = null;
@@ -16,13 +18,8 @@ class Market extends Component
     public function mount()
     {
         $this->loadCryptos();
+        $this->seo()->setTitle(' قیمت بازار');
     }
-
-    public function updatedSearch()
-    {
-        $this->loadCryptos(); // هربار سرچ تغییر کرد، ارزها رو دوباره فیلتر و لود کن
-    }
-
     public function loadCryptos()
     {
         $query = Crypto::query();

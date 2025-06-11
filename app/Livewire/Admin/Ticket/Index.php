@@ -5,12 +5,13 @@ namespace App\Livewire\Admin\Ticket;
 use App\Models\Department;
 use App\Models\Ticket;
 use App\Models\User;
+use Artesaos\SEOTools\Traits\SEOTools;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithPagination;
+    use WithPagination,SEOTools;
     public $search = '';
     public $status = '';
     public $priority = '';
@@ -19,6 +20,15 @@ class Index extends Component
     public $perPage = 10;
     public $activeTab = 'all';
 
+    public function mount()
+    {
+        $this->seoConfig();
+    }
+
+    public function seoConfig()
+    {
+        $this->seo()->setTitle('لیست تیکت و پشتیبانی');
+    }
     public function updating($field)
     {
         if (in_array($field, ['search', 'priority', 'department', 'assigned', 'activeTab'])) {

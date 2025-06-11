@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Ticket;
 
 use App\Models\Ticket;
+use Artesaos\SEOTools\Traits\SEOTools;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -10,7 +11,7 @@ use Livewire\WithFileUploads;
 
 class Show extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads,SEOTools;
 
     public Ticket $ticket;
     public $message = '';
@@ -19,7 +20,11 @@ class Show extends Component
     public function mount(Ticket $ticket)
     {
         $this->ticket = $ticket->load(['messages.user', 'user', 'department']);
+        $this->seo()->setTitle($ticket->user->name);
+
     }
+
+
     public function submit()
     {
         $validator = Validator::make([
