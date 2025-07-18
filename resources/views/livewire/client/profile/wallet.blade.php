@@ -2,12 +2,12 @@
     @push('link')
         <link href="/client/assets/css/pages/wallet-v2.css" rel="stylesheet" type="text/css">
         <link href="/client/assets/css/pages/wallet-v1.css" rel="stylesheet" type="text/css">
-
     @endpush
+
     <div class="wallet wallet--v2">
         <div class="container container--wallet-v2">
             <!-- Start::Dashboard Navbar v2 -->
-            <nav wire:ignore class="navbar navbar-expand-lg header-navbar header-navbar-dashboard--v2" data-aos="fade-down">
+            <nav class="navbar navbar-expand-lg header-navbar header-navbar-dashboard--v2" >
                 <div class="container container--dashboard-nav">
                     <div class="navbar-left">
                         <a class="navbar-brand" href="wallet-v2.html#">
@@ -18,26 +18,15 @@
                     <div class="navbar-right">
                         <div class="navbar-search">
                             <input type="text" class="navbar-search__input" placeholder="جستجو">
-                            <img src="/client/assets/media/images/icons/search.svg" alt="search-icon"
-                                 class="navbar-search__image">
+                            <img src="/client/assets/media/images/icons/search.svg" alt="search-icon" class="navbar-search__image">
                         </div>
                         <div class="navbar-notifications">
-                            <img src="/client/assets/media/images/icons/notifications.svg" alt="notifications-icon"
-                                 class="navbar-notifications__image">
+                            <img src="/client/assets/media/images/icons/notifications.svg" alt="notifications-icon" class="navbar-notifications__image">
                             <div class="navbar-notifications__dropdown">
                                 <p class="fb-regular fb-regular--bold notifications__title">اطلاعیه</p>
                                 <div class="notifications__box">
                                     <div class="notifications__item">
-                                        <img src="/client/assets/media/images/notification-image.png" alt=""
-                                             class="notifications__item-image">
-                                        <div class="notifications__item-message">
-                                            <p class="notifications__item-sender">ریوز کیانو</p>
-                                            <p class="notifications__item-text">پست شما را تبلیغ کرد</p>
-                                        </div>
-                                    </div>
-                                    <div class="notifications__item">
-                                        <img src="/client/assets/media/images/notification-image.png" alt=""
-                                             class="notifications__item-image">
+                                        <img src="/client/assets/media/images/notification-image.png" alt="" class="notifications__item-image">
                                         <div class="notifications__item-message">
                                             <p class="notifications__item-sender">ریوز کیانو</p>
                                             <p class="notifications__item-text">پست شما را تبلیغ کرد</p>
@@ -46,22 +35,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{--                        <div class="navbar-profile-menu">--}}
-                        {{--                            <p class="navbar-profile-menu__text">جان دو</p>--}}
-                        {{--                            <img src="/client/assets/media/images/profile-photo.png" alt="profile-photo-icon" class="navbar-profile-menu__image">--}}
-                        {{--                            <img src="/client/assets/media/images/icons/arrow-down.svg" alt="arrow-down-icon" class="navbar-profile-menu__arrow">--}}
-                        {{--                            <div class="navbar-profile-menu__dropdown">--}}
-                        {{--                                <div class="navbar-profile-menu__dropdown-item">--}}
-                        {{--                                    <a class="fb-regular dropdown-item__link" href="profile-v2.html">اکانت</a>--}}
-                        {{--                                </div>--}}
-                        {{--                                <div class="navbar-profile-menu__dropdown-item">--}}
-                        {{--                                    <a class="fb-regular dropdown-item__link" href="sign-in-v2.html">خروج</a>--}}
-                        {{--                                </div>--}}
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <img src="/client/assets/media/images/icons/menu.svg" alt="MENU">
                         </button>
                     </div>
@@ -69,365 +43,140 @@
                         <div class="navbar-collapse__content">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->routeIs('client.profile.dashboard') ? 'active' : '' }}"
-                                       href="{{route('client.profile.dashboard')}}">داشبورد</a>
+                                    <a class="nav-link {{ request()->routeIs('client.profile.dashboard') ? 'active' : '' }}" href="{{route('client.profile.dashboard')}}">داشبورد</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->routeIs('client.profile.market') ? 'active' : '' }}"
-                                       href="{{route('client.profile.market')}}">بازار</a>
+                                    <a class="nav-link {{ request()->routeIs('client.profile.market') ? 'active' : '' }}" href="{{route('client.profile.market')}}">بازار</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->routeIs('client.profile.wallet') ? 'active' : '' }}"
-                                       href="{{route('client.profile.wallet')}}">کیف پول</a>
+                                    <a class="nav-link {{ request()->routeIs('client.profile.wallet') ? 'active' : '' }}" href="{{route('client.profile.wallet')}}">کیف پول</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->routeIs('client.profile.ticket') ? 'active' : '' }}"
-                                       href="{{route('client.profile.ticket')}}">پشتیبانی و تیکت</a>
+                                    <a class="nav-link {{ request()->routeIs('client.profile.ticket') ? 'active' : '' }}" href="{{route('client.profile.ticket')}}">پشتیبانی و تیکت</a>
                                 </li>
                             </ul>
-                            {{--                            <div class="navbar-profile-menu">--}}
-                            {{--                                <p class="navbar-profile-menu__text">جان دو</p>--}}
-                            {{--                                <img src="/client/assets/media/images/profile-photo.png" alt="profile-photo-icon" class="navbar-profile-menu__image">--}}
-                            {{--                                <img src="/client/assets/media/images/icons/arrow-down.svg" alt="arrow-down-icon" class="navbar-profile-menu__arrow">--}}
-                            {{--                                <div class="navbar-profile-menu__dropdown">--}}
-                            {{--                                    <div class="navbar-profile-menu__dropdown-item">--}}
-                            {{--                                        <a class="fb-regular dropdown-item__link" href="profile-v2.html">اکانت</a>--}}
-                            {{--                                    </div>--}}
-                            {{--                                    <div class="navbar-profile-menu__dropdown-item">--}}
-                            {{--                                        <a class="fb-regular dropdown-item__link" href="sign-in-v2.html">خروج</a>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
                         </div>
                     </div>
                     <div class="navbar-search-popup">
-                        <input type="text" class="navbar-search-popup__input js-navbar-search-popup__input"
-                               placeholder="جستجو">
-                        <img src="/client/assets/media/images/icons/search.svg" alt="search-icon"
-                             class="navbar-search-popup__image">
-                        <img src="/client/assets/media/images/icons/plus-icon.svg" alt="cancel-icon"
-                             class="navbar-search-popup__image--cancel js-navbar-search-popup__image--cancel">
+                        <input type="text" class="navbar-search-popup__input js-navbar-search-popup__input" placeholder="جستجو">
+                        <img src="/client/assets/media/images/icons/search.svg" alt="search-icon" class="navbar-search-popup__image">
+                        <img src="/client/assets/media/images/icons/plus-icon.svg" alt="cancel-icon" class="navbar-search-popup__image--cancel js-navbar-search-popup__image--cancel">
                     </div>
                 </div>
             </nav>
-            <!-- End::Dashboard Navbar v2 -->
+
             <div class="container container--dashboard">
                 <h2 class="dashboard__title mb-4">کیف پول رمزنگاری شده</h2>
+
                 <div class="wallet-group">
                     <div class="wallet-group--right">
                         <!-- Start::Advance Card -->
-                        <div wire:ignore class="advance-card advance-card--type-3-v1" data-aos="fade-up">
-                            <div wire:ignore class="advance-card__balance">
+                        <div class="advance-card advance-card--type-3-v1" >
+                            <div class="advance-card__balance">
                                 <p class="advance-card__balance-title">کل موجودی</p>
-                                <p class="advance-card__balance-crypto-value">0.2133214214</p>
+                                <p class="advance-card__balance-crypto-value">
+                                    {{ number_format($wallet->balance ?? 0, 2) }}
+                                </p>
                                 <p class="advance-card__balance-currency-value">
-                                    3,230.98
-                                    <span class="advance-card__balance-currency"> دلار</span>
+                                    حدود {{ number_format(($wallet->balance ?? 0) / 89_000, 0) }}
+                                    <span class="advance-card__balance-currency">دلار</span>
                                 </p>
                             </div>
 
-
                             <div>
-                                <form wire:submit.prevent="submit">
-                                    @if (session()->has('message'))
-                                        <div class="alert alert-success">{{ session('message') }}</div>
-                                    @endif
-                                    <div >
-                                        <div class="mb-3" wire:ignore="">
-                                            <label>مبلغ واریز (تستی):</label>
-                                            <input type="number" wire:model.defer="amount" class="form-control">
-                                            @error('amount') <span class="text-danger">{{ $message }}</span> @enderror
-                                        </div>
 
-                                        <div class="mb-3" wire:ignore>
-                                            <label>TxID تستی (اختیاری):</label>
-                                            <input type="text" wire:model.defer="txid" class="form-control">
-                                            @error('txid') <span class="text-danger">{{ $message }}</span> @enderror
-                                        </div>
 
-                                        <div class="mb-3" wire:ignore>
-                                            <label>توضیحات (اختیاری):</label>
-                                            <input type="text" wire:model.defer="description" class="form-control">
-                                            @error('description') <span
-                                                class="text-danger">{{ $message }}</span> @enderror
-                                        </div>
+                                    <div class="wallet-form-section">
+                                        @if($notification)
+                                            <div class="alert alert-info mt-3">{{ $notification }}</div>
+                                        @endif
 
-                                        <button class="btn btn-primary">
-                                            <span wire:loading.remove>ثبت درخواست واریز</span>
-                                            <div wire:loading class="spinner-border text-success" role="status">
-                                                <span class="visually-hidden">Loading...</span>
+                                        {{-- فرم واریز --}}
+                                        <form wire:submit.prevent="submitDeposit" class="mb-4" wire:ignore.self>
+                                            <h5>فرم واریز</h5>
+                                            <div class="mb-3">
+                                                <label>مبلغ واریز (تومان):</label>
+                                                <input type="number" class="form-control" wire:model.defer="deposit_amount">
+                                                @error('deposit_amount') <span class="text-danger">{{ $message }}</span> @enderror
                                             </div>
-                                        </button>
 
+                                            <div class="mb-3">
+                                                <label>کد تراکنش (TX ID):</label>
+                                                <input type="text" class="form-control" wire:model.defer="deposit_tx_id">
+                                                @error('deposit_tx_id') <span class="text-danger">{{ $message }}</span> @enderror
+                                            </div>
+
+                                            <button class="btn btn-green">
+                                                <span wire:confirm="ایا از مقدار واریزی خود اطمینان دارید؟" wire:loading.remove wire:target="submitDeposit">ثبت واریز</span>
+                                                <div wire:loading wire:target="submitDeposit" class="spinner-border text-light" role="status"></div>
+                                            </button>
+                                        </form>
+<hr>
+                                        {{-- فرم برداشت --}}
+                                        <form wire:submit.prevent="submitWithdraw" wire:ignore.self="submitWithdraw">
+                                            <h5>فرم برداشت</h5>
+                                            <div class="mb-3">
+                                                <label>مبلغ برداشت (تومان):</label>
+                                                <input type="number" class="form-control" wire:model.defer="withdraw_amount">
+                                                @error('withdraw_amount') <span class="text-danger">{{ $message }}</span> @enderror
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label>توضیحات:</label>
+                                                <textarea class="form-control" wire:model.defer="withdraw_description"></textarea>
+                                                @error('withdraw_description') <span class="text-danger">{{ $message }}</span> @enderror
+                                            </div>
+
+                                            <button class="btn btn-danger">
+                                                <span wire:confirm="ایا از مقدار برداشت خود اطمینان دارید ؟" wire:loading.remove wire:target="submitWithdraw">ثبت برداشت</span>
+                                                <div wire:loading wire:target="submitWithdraw" class="spinner-border text-light" role="status"></div>
+                                            </button>
+                                        </form>
                                     </div>
-                                </form>
-                            </div>
-                            <div class="advance-card__buttons">
-                                <button class="btn btn-primary advance-card__button btn-sm btn-pill">کنار کشیدن</button>
-                                <button class="btn btn-secondary advance-card__button btn-sm">سپرده</button>
                             </div>
                         </div>
-                        <!-- End::Advance Card -->          <!-- Start::Table Section -->
-                        <div wire:ignore class="table-wrapper table--type-1" data-aos="fade-up">
+
+                        <!-- Start::Table Section -->
+                        <div  class="table-wrapper table--type-2" >
                             <div class="table-container">
                                 <table class="table table-content">
                                     <thead>
                                     <tr>
-                                        <th class="fb-regular table__head" colspan="2">دارایی ها</th>
-                                        <th class="fb-regular table__head">در صورت سفارش</th>
-                                        <th class="fb-regular table__head">موجودی موجود</th>
-                                        <th class="fb-regular table__head">موجودی کل</th>
-                                        <th class="fb-regular table__head">بازار 24 ساعته</th>
+                                        <th>#</th>
+                                        <th>نوع</th>
+                                        <th>مبلغ</th>
+                                        <th>TX ID</th>
+                                        <th>وضعیت</th>
+                                        <th>توضیح</th>
+                                        <th>تاریخ</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-btc.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">BTC</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">بیتکوین</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 53,260.20</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 53,260.20</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 53,260.20</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bullish">0.25%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-eth.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">ETH</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">اتریوم</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 1,643.80</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 1,643.80</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 1,643.80</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bearish">4.51%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-bnb.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">BNB</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">سکه بایننس</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 247.72</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 247.72</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 247.72</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bullish">2.43%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-xrp.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">XRP</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">اکس پی آر</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bullish">2.42%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-usdt.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">
-                                                    USDT</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">تتر</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 0.9999</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 0.9999</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 0.9999</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bearish">0.40%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-xrp.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">XRP</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">اکس پی آر</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bullish">2.42%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-act.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">ACT</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">آچاین</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 40,355.12</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 40,355.12</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 40,355.12</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bullish">0.05%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-ogn.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">OGN</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">پروتکل مبدا</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 3,152.93</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 3,152.93</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 3,152.93</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bearish">0.22%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-itc.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">ITC</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">زنجیره اینترنت اشیا</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 21,222.20</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 21,222.20</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 21,222.20</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bullish">0.23%</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table__assets">
-                                            <div class="table__assets-crypto">
-                                                <img src="/client/assets/media/images/icons/logo-xrp.svg" alt=""
-                                                     class="table__assets-crypto-icon">
-                                                <p class="fb-regular fb-regular--bold table__assets-crypto-abbr">XRP</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__assets-name">اکس پی آر</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__order"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__available"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__total"> دلار 0.5657</p>
-                                        </td>
-                                        <td>
-                                            <p class="fb-regular table__market text-bullish">2.42%</p>
-                                        </td>
-                                    </tr>
+                                    @forelse($transactions as $tx)
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{ $tx->type == 'deposit' ? 'واریز' : 'برداشت' }}</td>
+                                            <td>{{ number_format($tx->amount) }}</td>
+                                            <td>{{ $tx->tx_id ?? '---' }}</td>
+                                            <td>
+                                                @if($tx->status == 'approved')
+                                                    <span class="text-success">تأیید شده</span>
+                                                @elseif($tx->status == 'pending')
+                                                    <span class="text-warning">در حال بررسی</span>
+                                                @else
+                                                    <span class="text-danger">رد شده</span>
+                                                @endif
+                                            </td>
+                                            <td>{{ $tx->description ?? '---' }}</td>
+                                            <td>{{ jalali($tx->created_at)->format('Y/m/d H:i') }}</td>
+                                        </tr>
+                                    @empty
+                                        <tr><td colspan="6">هیچ تراکنشی یافت نشد.</td></tr>
+                                    @endforelse
                                     </tbody>
                                 </table>
-
                             </div>
                         </div>
-                        <!-- End::Table Section -->
                     </div>
                 </div>
             </div>

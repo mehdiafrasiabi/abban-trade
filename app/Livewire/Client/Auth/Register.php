@@ -147,7 +147,9 @@ class Register extends Component
                 'mobile' => $this->userMobile,
                 'password' => bcrypt($formData['password']),
             ]);
-
+            $newUser->wallet()->create([
+                'balance' => 0.00,
+            ]);
             Auth::login($newUser, true);
         } else {
             $existingUser->update(['password' => bcrypt($formData['password'])]);

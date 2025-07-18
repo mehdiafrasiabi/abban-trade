@@ -64,6 +64,12 @@
                             <i class="ri-ticket-2-line"></i> <span data-key="t-ticket">تیکت و پشتیبانی</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link {{ request()->routeIs('admin.wallet') ? 'active' : '' }}" href="{{route('admin.wallet')}}" role="button"
+                           aria-expanded="false" aria-controls="sidebarTickets">
+                            <i class="ri-list-ordered-2"></i> <span data-key="t-ticket">واریزی ها و برداشت</span>
+                        </a>
+                    </li>
 
 
                     <li class="nav-item">

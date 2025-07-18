@@ -28,7 +28,8 @@ class Market extends Component
             $query->where(function ($q) {
                 $q->where('name_fa', 'like', "%{$this->search}%")
                     ->orWhere('name_en', 'like', "%{$this->search}%")
-                    ->orWhere('symbol', 'like', "%{$this->search}%");
+                    ->orWhere('symbol', 'like', "%{$this->search}%")
+                    ->orWhere('coingecko_id', 'like', "%{$this->search}%");
             });
         }
 
@@ -44,6 +45,7 @@ class Market extends Component
             if ($response->successful()) {
                 $this->cryptos = collect($response->json())->map(function ($coin) use ($coinMeta) {
                     $coin['name_fa'] = $coinMeta[$coin['id']]->name_fa ?? '-';
+                    $coin['symbol'] = $coinMeta[$coin['id']]->symbol ?? $coin['symbol'];
                     return $coin;
                 })->values()->toArray();
 

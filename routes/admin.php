@@ -8,6 +8,7 @@ use App\Livewire\Admin\Ticket\Index as TicketIndex;
 use App\Livewire\Admin\Ticket\Show as TicketShow;
 use App\Livewire\Admin\User\Index as UserIndex;
 use App\Livewire\Admin\User\Information as UserInformation;
+use App\Livewire\Admin\Wallet\Index as WalletIndex;
 use Illuminate\Support\Facades\Route;
 
 Route::name('admin.')->group(function () {
@@ -20,5 +21,6 @@ Route::name('admin.')->group(function () {
     Route::get('/ticket', TicketIndex::class)->name('ticket.index');
     Route::get('/ticket/{ticket}', TicketShow::class)->name('ticket.show');
     Route::get('/department', DepartmentIndex::class)->name('department');
+    Route::get('/wallet', WalletIndex::class)->name('wallet');
 
 });

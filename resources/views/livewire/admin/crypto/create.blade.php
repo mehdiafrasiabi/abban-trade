@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                                 <div id="alternative-pagination_filter" class="dataTables_filter"><label>جستجو:<input
-                                            wire:model.live.debounce.500ms="search"
+                                            wire:model.live="search"
                                             type="search" class="form-control " placeholder="مثال:بیت کوین یا bitcoin"
                                             aria-controls="alternative-pagination"></label></div>
                             </div>

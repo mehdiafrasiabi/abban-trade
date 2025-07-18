@@ -80,6 +80,7 @@
                                         تیکت در وضعیت {{ ($ticket->status=='waiting' ? 'در انتظار پاسخ ادمین' : 'بسته شده' ) }} است و امکان پاسخ‌دهی وجود ندارد.
                                     </div>
                                     <br>
+                                    <a href="{{route('client.profile.ticket')}}" class="btn btn-primary">بازگشت</a>
                                 @endif
 
                             </div>

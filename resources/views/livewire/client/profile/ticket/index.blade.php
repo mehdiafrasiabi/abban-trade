@@ -106,6 +106,7 @@
 
                             <div class="table-wrapper table--type-1 aos-init aos-animate" data-aos="fade-up">
                                 <div class="table-container">
+                                    <a href="{{route('client.profile.ticket.create')}}" class="text-success text-right">  ثبت تیکت جدید</a>
                                     <table class="table table-content">
                                         <thead>
                                         <tr>
@@ -162,7 +163,7 @@
                                             </tr>
                                         @empty
                                           <tr>
-                                             <p class="btn btn-danger">تیکتی وجود ندارد </p>
+                                             <p class="text-danger text-center mb-6">تیکتی وجود ندارد </p>
                                           </tr>
                                         @endforelse
 

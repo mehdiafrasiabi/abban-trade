@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('wallet_transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('wallet_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['deposit', 'withdraw']);
-            $table->decimal('amount', 20, 8);
-            $table->string('txid')->nullable();
-            $table->enum('status', ['pending', 'completed', 'rejected'])->default('pending');
-            $table->string('description')->nullable();
+
+            $table->enum('type', ['deposit', 'withdraw']); // نوع تراکنش
+            $table->decimal('amount', 16, 4);               // مبلغ
+            $table->string('tx_id')->nullable();            // فقط برای واریز تستی
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
