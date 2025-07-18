@@ -35,11 +35,11 @@ class Show extends Component
         // مرحله اول: ولیدیشن
         $this->validate([
             'message' => 'required|string|min:4',
-            'attachment' => 'nullable|file|max:51200|mimes:jpg,jpeg,png,gif,webp',
+            'attachment' => 'nullable|file|max:10240|mimes:zip,rar',
         ], [
             'message.required' => 'فیلد ضروری است',
             '*.string' => 'فرمت نوشتاری شما اشتباه است ',
-            '*.max' => 'حداکثر حجم فایل ۵۰ مگابایت است',
+            '*.max' => 'حداکثر حجم فایل 10 مگابایت است',
             '*.min' => 'حداقل نوشتن : 4 کاراکتر',
             '*.mimes' => 'فقط فرمت‌های عکس مجاز است',
         ]);

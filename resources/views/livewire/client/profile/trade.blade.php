@@ -105,18 +105,7 @@
                                             </div>
                                         </div>
                                         <div class="standard-card__separator"></div>
-                                        <div class="standard-card__item standard-card__item--2">
-                                            <div class="standard-card__item-left">
-                                                <p class="fb-regular standard-card__item-title">تغییر 24 ساعته<p>
-                                                <div class="standard-card__item-influsion">
-                                                    <img src="/client/assets/media/images/icons/arrow-bullish.svg" alt="" class="standard-card__item-influsion-icon">
-                                                    <p class="fd-sm fd-sm--bold standard-card__item-influsion-value text-bullish">0.53%</p>
-                                                </div>
-                                            </div>
-                                            <div class="standard-card__item-chart-wrapper">
-                                                <div id="standard-card__item-line-1" class="standard-card__item-chart-render"></div>
-                                            </div>
-                                        </div>
+
                                         <div class="standard-card__separator"></div>
                                         <div class="standard-card__item standard-card__item--3">
                                             <p class="fb-regular standard-card__item-title">آخرین قیمت</p>
@@ -125,7 +114,7 @@
                                         <div class="standard-card__separator"></div>
                                         <div class="standard-card__item standard-card__item--4">
                                             <p class="fb-regular standard-card__item-title">  تغییر ۲۴ساعته</p>
-                                            <p class="@if($data['market_data']['price_change_percentage_24h'] >= 0) text-green-500 @else text-red-500 @endif fd-sm fd-sm--bold standard-card__item-value">
+                                            <p class="@if($data['market_data']['price_change_percentage_24h'] >= 0) text-green @else text-red @endif fd-sm fd-sm--bold standard-card__item-value">
                                                 {{ $data['market_data']['price_change_percentage_24h'] }}
                                             </p>
                                         </div>

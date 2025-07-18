@@ -32,7 +32,7 @@ class Show extends Component
             'attachment' => $this->attachment,
         ], [
             'message' => 'required|string|min:3',
-            'attachment' => 'nullable|file|max:51200|mimes:jpg,jpeg,png,webp,gif,mp4,mov,avi,mkv,webm',
+            'attachment' => 'nullable|file|max:10240|mimes:zip,rar',
         ])->validate();
 
         $fileName = null;

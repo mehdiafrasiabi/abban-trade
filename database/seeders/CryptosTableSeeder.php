@@ -118,6 +118,28 @@ class CryptosTableSeeder extends Seeder
                 'created_at' => '2025-06-07 18:22:18',
                 'updated_at' => '2025-06-07 18:22:18',
             ),
+            9 => 
+            array (
+                'id' => 10,
+                'coingecko_id' => 'shiba',
+                'symbol' => 'shiba',
+                'name_en' => 'Shiba',
+                'name_fa' => 'شیبا',
+                'image_url' => 'https://coin-images.coingecko.com/coins/images/32299/thumb/IMG_20231011_081456_897.jpg?1697186075',
+                'created_at' => '2025-07-18 23:17:20',
+                'updated_at' => '2025-07-18 23:17:20',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'coingecko_id' => 'binancecoin',
+                'symbol' => 'bnb',
+                'name_en' => 'BNB',
+                'name_fa' => 'بایننس کوین',
+                'image_url' => 'https://coin-images.coingecko.com/coins/images/825/thumb/bnb-icon2_2x.png?1696501970',
+                'created_at' => '2025-07-18 23:21:11',
+                'updated_at' => '2025-07-18 23:21:11',
+            ),
         ));
         
         

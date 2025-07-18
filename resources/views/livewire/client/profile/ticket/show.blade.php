@@ -52,8 +52,8 @@
                                                     $path = asset("ticket/{$msg->user_id}/file/{$msg->attachment}");
                                                 @endphp
                                                 <div class="mt-2">
-                                                    @if(in_array($ext, ['jpg','jpeg','png','webp','gif']))
-                                                        <img src="{{ $path }}" alt="پیوست" class="w-50 rounded shadow" style="height: 200px">
+                                                    @if(in_array($ext, ['zip','rar']))
+                                                        <a href="{{ $path }}" alt="پیوست" class="w-50 rounded shadow" style="height: 200px">مشاهده کنید</a>
                                                     @endif
                                                 </div>
                                             @endif
@@ -80,7 +80,7 @@
                                         تیکت در وضعیت {{ ($ticket->status=='waiting' ? 'در انتظار پاسخ ادمین' : 'بسته شده' ) }} است و امکان پاسخ‌دهی وجود ندارد.
                                     </div>
                                     <br>
-                                    <a href="{{route('client.profile.ticket')}}" class="btn btn-primary">بازگشت</a>
+                                    <a href="{{route('client.profile.ticket')}}">بازگشت</a>
                                 @endif
 
                             </div>
